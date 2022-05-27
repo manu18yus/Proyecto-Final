@@ -1,0 +1,59 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+img{
+    width: 195px;
+    height: 180px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.card{
+    background-color: rgb(42, 42, 109);
+    font-size: 11px; text-align: center; 
+    width: 6cm;
+    display: flex;
+    align-content: space-between;
+    margin: auto;
+}
+
+.card_body{
+    font-size: 15px;
+}
+
+h3{
+    color: white;
+    font-size: 15px;
+    text-align: left;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+h4{
+    color: rgb(172, 169, 165) ;
+    font-size: 12px;
+    text-align: left;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+p{
+    display: block;
+}
+
+.eth{
+    color: aqua;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 15px;
+}
+
+.texto{
+    height: 2cm;
+}
+
+.days{
+    color: rgb(172, 169, 165) ;
+
+}

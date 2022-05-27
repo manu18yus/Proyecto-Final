@@ -1,0 +1,186 @@
+.d-block{
+    margin: auto;
+    max-height: 300px;
+    max-width: 300px;
+}
+
+.izquierda{
+    float: left;
+    padding: 1cm;
+    display: block;
+    margin-left: 1cm;
+    margin-right: 1cm;
+    margin-bottom: 1cm;
+}
+
+footer{
+    margin-top:27cm;
+}
+
+.separacion100px{
+   margin-top : 100px;
+}
+.separacion50px{
+    margin-top : 50px;
+ }
+
+.informacion{
+    
+}
+
+@media(max-width:1657px){
+    
+    .izquierda{
+        float: left;
+        padding: 1cm;
+        display: block;
+        margin-left: 1cm;
+        margin-right: 0.5cm;
+        margin-bottom: 1cm;
+    }
+}
+
+@media(max-width:1526px){
+    
+    .izquierda{
+        float: left;
+        padding: 1cm;
+        display: block;
+        margin-left: 1cm;
+        margin-right: 0.5cm;
+        margin-bottom: 1cm;
+    }
+    footer{
+        margin-top:40cm;
+    }
+    
+}
+
+@media(max-width:1055px){
+    
+    .izquierda{
+        padding: 1cm;
+        display: block;
+        margin-left: 1cm;
+        margin-right: 0.5cm;
+        margin-bottom: 1cm;
+    }
+    footer{
+        margin-top:54cm;
+    }
+    
+}
+
+@media(max-width:1055px){
+    
+    .izquierda{
+        padding: 1cm;
+        display: block;
+        margin-left: 1cm;
+        margin-right: 0.5cm;
+        margin-bottom: 1cm;
+    }
+    footer{
+        margin-top:68cm;
+    }
+    
+}
+
+@media(max-width:800px){
+        
+    .titulo{
+        font-size: medium;
+    }
+
+    .izquierda{
+        margin-bottom: 1cm;
+    }
+
+    .imagenes{
+        width: 170px;
+        height: 130px;
+    }
+
+    footer{
+        margin-top:32cm;
+    }
+}
+
+
+@media(max-width:735px){
+        
+    .titulo{
+        font-size: medium;
+    }
+
+    .izquierda{
+        margin-bottom: 1cm;
+    }
+
+    .imagenes{
+        width: 170px;
+        height: 130px;
+    }
+
+    footer{
+        margin-top:41cm;
+    }
+}
+
+@media(max-width:668px){
+        
+    .titulo{
+        font-size: medium;
+    }
+
+    .izquierda{
+        margin-bottom: 1cm;
+    }
+
+    .imagenes{
+        width: 170px;
+        height: 130px;
+    }
+
+    footer{
+        margin-top:49cm;
+    }
+}
+
+@media(max-width:585px){
+    
+    .izquierda{
+        padding: 0.5cm;
+        display: block;
+        margin-bottom: 1cm;
+    }
+
+    .imagenes{
+        width: 170px;
+        height: 130px;
+    }
+
+    footer{
+        margin-top:47cm;
+    }
+    
+}
+
+@media(max-width:380px){
+   
+    .izquierda{
+        padding: 0.5cm;
+        display: block;
+        margin-bottom: 1cm;
+    }
+
+    .imagenes{
+        width: 170px;
+        height: 130px;
+    }
+
+    footer{
+        margin-top:47cm;
+    }
+    
+}

@@ -1,0 +1,146 @@
+.container {
+	width: 100%;
+	margin: 0 auto;
+}
+
+label{
+	color: white;
+}
+
+.card-body{
+	border: solid 1px black;
+	background-color: burlywood;
+}
+
+.navegacion{
+	background-color: burlywood;
+	display: flex;
+	justify-content: center;
+}
+
+.boton{
+	float: right;	
+	display: flex;
+	justify-content: center;
+}
+.navbar-brand{
+	color: black;
+}
+
+.form-control{
+	float: right;
+}
+
+input {
+	background-color: #186859;
+}
+
+input[type="button"]{
+	background-color: #830f60;
+	color: white;
+}
+
+div.centrar {
+	display: flex;
+	justify-content: center;
+}
+
+hr {
+	margin: 0.8em 0 .8em 0;
+	
+}
+.enLinea {
+	display: inline;
+}
+
+footer {
+	background-color: #A1BEB8;
+}
+
+.formulario__grupo-correcto{
+	background-color: green;
+}
+
+.formulario__grupo-error{
+	background-color: red;
+}
+
+p{
+	display: none;
+}
+
+.formulario__input-error {
+	display: none;
+}
+.formulario__input-error-activo {
+	display: inline;
+}
+
+.bien, .mal{
+    height: 20px;
+    vertical-align: middle;
+    float: left;
+	display: none;
+}
+.mostrar{
+    display: inline;
+}
+
+
+
+
+.formulario__checkbox {
+	margin-right: 10px;
+}
+
+.formulario__grupo-terminos, 
+.formulario__mensaje,
+.formulario__grupo-btn-enviar {
+	grid-column: span 2;
+}
+
+.formulario__mensaje {
+	height: 45px;
+	line-height: 45px;
+	background: #F66060;
+	padding: 0 15px;
+	border-radius: 3px;
+	display: none;
+}
+
+.formulario__mensaje-activo {
+	display: block;
+}
+
+.formulario__mensaje p {
+	margin: 0;
+}
+
+
+.formulario__mensaje-exito {
+	font-size: 14px;
+	color: #119200;
+	display: none;
+}
+
+.formulario__mensaje-exito-activo {
+	display: block;
+}
+
+.formulario__grupo-correcto .formulario__validacion-estado {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label {
+	color: #bb2929;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+	color: #bb2929;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input {
+	border: 3px solid #bb2929;
+}
