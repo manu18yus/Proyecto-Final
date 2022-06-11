@@ -27,6 +27,7 @@
    
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><a class="nav-link" href="inicio.php">Inicio</a></li>
               <li class="nav-item"><a class="nav-link" href="index.php">Principal</a></li>
               <li class="nav-item"><a class="nav-link" href="registro.php">Registro</a></li>
               <li class="nav-item"><a class="nav-link" href="login.php">Iniciar Sesión</a></li>
@@ -127,8 +128,19 @@
                       <p class="formulario__input-error">2 para usuario anonimo y 3 para usuario común</p>
                       </div>
 
+                      <div class="formulario__conjunto" id="grupo__email">
+                          <label>Email</label><br>
+                      <div class="form-conjunto-input">
+                          <input type="text" name="email" id="email" placeholder="Escriba el hotmail" class="form-control">
+                          <img class="bien" src="check.png">
+                          <img class="mal" src="cerrar.png">
+                      </div>
+                      <br>
+                      <p class="formulario__input-error">Introduzca un correo válido</p>
+                      </div>
+
                         <br>
-                        <button type="submit" class="btn btn-primary btn-block text-center">Guardar</button>
+                        <button type="submit" class="btn btn-warning btn-block text-center">Guardar</button>
                     </form>
                 </div>
                 </div>

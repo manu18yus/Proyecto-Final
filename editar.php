@@ -16,6 +16,7 @@ $nombre=$_GET['nombre'];
 $apellido=$_GET['apellido'];
 $contrasenia2=$_GET['contrasenia2'];
 $dni=$_GET['dni'];
+$email=$_GET['email'];
 ?>
 
 <!-- Cuando se pulse en editar sobre un usuario aparecera un pequeño formulario con los datos rellenos de ese usuario
@@ -54,6 +55,10 @@ y se deberá de borrar y cambiar lo que queramos  -->
                 <tr>
                     <td>DNI:</td>
                     <td><input type="text" name="dni" value="<?=$dni?>"></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="text" name="email" value="<?=$email?>"></td>
                 </tr>
                 <tr>
                     <td><input type="submit" value="Actualizar"></td>

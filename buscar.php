@@ -33,11 +33,12 @@ enseñarlos al administrador en forma de tabla -->
                 <td>Apellido</td>
                 <td>Contraseña 2</td>
                 <td>DNI</td>
+                <td>Email</td>
                 <td>Opciones</td>
             </tr>
             <?php
                 $cnx = mysqli_connect("localhost", "root", "root", "blog");
-                $sql = "SELECT id, usuario, contrasenia, rol_id, nombre, apellido, contrasenia2, dni FROM usuarios WHERE nombre LIKE '$buscar' '%' OR apellido LIKE '$buscar' '%' ";
+                $sql = "SELECT id, usuario, contrasenia, rol_id, nombre, apellido, contrasenia2, dni, email FROM usuarios WHERE nombre LIKE '$buscar' '%' OR apellido LIKE '$buscar' '%' ";
                 $rta = mysqli_query($cnx, $sql); 
                 while($mostrar = mysqli_fetch_row($rta)){
                 ?>
@@ -50,6 +51,7 @@ enseñarlos al administrador en forma de tabla -->
                       <td><?php echo $mostrar['5'] ?></td> 
                       <td><?php echo $mostrar['6'] ?></td> 
                       <td><?php echo $mostrar['7'] ?></td> 
+                      <td><?php echo $mostrar['8'] ?></td> 
                       <td>
                           <a href="editar.php?
                           id=<?php echo $mostrar['0'] ?> &
@@ -59,7 +61,8 @@ enseñarlos al administrador en forma de tabla -->
                           nombre=<?php echo $mostrar['4'] ?> &
                           apellido=<?php echo $mostrar['5'] ?> &
                           contrasenia2=<?php echo $mostrar['6'] ?> &
-                          dni=<?php echo $mostrar['7'] ?>
+                          dni=<?php echo $mostrar['7'] ?> &
+                          email=<?php echo $mostrar['8'] ?>
                           ">Editar</a>
                           <a href="sp_eliminar.php? id=<?php echo $mostrar['0'] ?>">Eliminar</a>
                       </td>   

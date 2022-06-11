@@ -43,6 +43,10 @@
                     <td><input type="text" name="rol_id"></td>
                 </tr>
                 <tr>
+                    <td>email:</td>
+                    <td><input type="text" name="email"></td>
+                </tr>
+                <tr>
                     <td><input type="submit" value="Guardar"></td>
                 </tr>
             </table>

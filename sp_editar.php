@@ -9,9 +9,10 @@ $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];
 $contrasenia2 = $_POST['contrasenia2'];
 $dni = $_POST['dni'];
+$email = $_POST['email'];
 
 $cnx = mysqli_connect("localhost", "root", "root", "blog");
-$sql = "UPDATE usuarios SET usuario='$usuario', contrasenia='$contrasenia', rol_id='$rol_id', nombre='$nombre', apellido='$apellido', contrasenia2='$contrasenia2', dni='$dni' WHERE id like $id";
+$sql = "UPDATE usuarios SET usuario='$usuario', contrasenia='$contrasenia', rol_id='$rol_id', nombre='$nombre', apellido='$apellido', contrasenia2='$contrasenia2', dni='$dni', email='$email'  WHERE id like $id";
 $rta = mysqli_query($cnx, $sql);
 
 if(!$rta){

@@ -22,6 +22,7 @@
     $item->imagen = $_POST['imagen'];
     $item->descripcion = $_POST['descripcion'];
     $item->codigo = $_POST['codigo'];
+  
 
     if ($item->updateProduct()) {
         echo "Producto actualizado";

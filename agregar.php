@@ -12,8 +12,9 @@
         $apellido = $_POST['apellido2'];
         $contrasenia = $_POST['contrasenia2'];
         $dni = $_POST['dni'];
+        $email = $_POST['email'];
 
-            $query = "INSERT into usuarios(usuario, contrasenia, rol_id, nombre, apellido, contrasenia2, dni) VALUES ('$usuario', '$contrasenia', '$rol_id', '$nombre','$apellido', '$contrasenia2', '$dni')";
+            $query = "INSERT into usuarios(usuario, contrasenia, rol_id, nombre, apellido, contrasenia2, dni, email) VALUES ('$usuario', '$contrasenia', '$rol_id', '$nombre','$apellido', '$contrasenia2', '$dni', '$email')";
             $result = mysqli_query($connection, $query);
             if(!$result){
                 die('Query fallido');

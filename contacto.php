@@ -32,6 +32,7 @@
             <a class="navbar-brand" href="#">
             <img src="imagenes/carrito.png" alt="" width="30" >
             </a>
+            <li class="nav-item"><a class="nav-link" href="inicio.php">Inicio</a></li>
             <li class="nav-item"><a class="nav-link" href="index.php">Principal</a></li>
             <li class="nav-item"><a class="nav-link" href="registro.php">Registro</a></li>
             <li class="nav-item"><a class="nav-link" href="login.php">Iniciar Sesión</a></li>

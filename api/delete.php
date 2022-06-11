@@ -8,7 +8,7 @@
 
     include_once('../config/database.php');
     include_once('../class/Productos.php');
-
+    
     //Mediante el id eliminaremos un producto de la base de datos
 
     $database = new Database();

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 03-05-2022 a las 10:38:00
+-- Tiempo de generación: 10-06-2022 a las 23:05:50
 -- Versión del servidor: 8.0.28
 -- Versión de PHP: 8.0.16
 
@@ -82,21 +82,24 @@ CREATE TABLE `usuarios` (
   `nombre` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
   `apellido` varchar(155) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
   `contrasenia2` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
-  `dni` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL
+  `dni` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `usuario`, `contrasenia`, `rol_id`, `nombre`, `apellido`, `contrasenia2`, `dni`) VALUES
-(1, 'manu', 'manu', 2, 'manu', 'manu', 'manu', '45315974V'),
-(2, 'admin', 'admin', 1, 'admin', 'admin\r\n', 'admin', '45315974G'),
-(3, 'maria', 'maria', 2, 'maria', 'maria', 'maria', '45315974V'),
-(5, 'pokemon', 'root', 3, 'adkfl', 'adsf', 'admin', '45315974V'),
-(6, 'booooo', 'adsga ', 2, 'asdga ', 'dsga ', 'g ', '45315974V'),
-(9, 'usuario', 'usuario', 3, 'usuario', '', '', '43253232V'),
-(10, 'askdjf', 'hola', 2, 'prueba', '', '', '43253232V');
+INSERT INTO `usuarios` (`id`, `usuario`, `contrasenia`, `rol_id`, `nombre`, `apellido`, `contrasenia2`, `dni`, `email`, `token`) VALUES
+(1, 'manu', 'manu', 2, 'manu', 'manu', 'manu', '45315974V', '', ''),
+(2, 'admin', 'admin', 1, 'admin', 'admin\r\n', 'admin', '45315974G', 'manu12yus@hotmail.com', '49b6db5ae25572c0850306b5'),
+(3, 'INMA', 'maria ', 2, 'maria ', 'maria ', 'maria ', '45315974V', '', '1'),
+(5, 'pokemon', 'root', 3, 'adkfl', 'adsf', 'admin', '45315974V', '', ''),
+(6, 'booooo', 'adsga ', 2, 'asdga ', 'dsga ', 'g ', '45315974V', '', ''),
+(9, 'usuario ', 'usuario ', 3, 'usuario ', ' usuario', 'usuario', '43253232V', 'manu12yus@hotmail.com', '220114a33fb15d7a187de989'),
+(14, 'prueba', 'prueba', 2, 'prueba', '', '', '45315974V', 'cobrarques@gmail.com', NULL),
+(15, 'hola ', 'hola ', 2, 'hola ', 'hola ', 'hola ', 'hola ', 'holda@gmail.com', NULL);
 
 --
 -- Índices para tablas volcadas
@@ -129,7 +132,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
@@ -141,7 +144,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Restricciones para tablas volcadas

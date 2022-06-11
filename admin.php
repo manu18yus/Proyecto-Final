@@ -32,6 +32,7 @@
 <!-- Esta es la zona para crear nuevos productos donde el administrador meterá el producto que quiera -->
 <div align="center">
 	<h3>Administración de la página</h3>
+    <li class="nav-item"><a class="nav-link" href="logout.php">Cerrar Sesión</a></li>
     </div>
         <h4>Crear nuevo productos</h4>
         <hr>
@@ -81,11 +82,12 @@
                 <td>Apellido</td>
                 <td>Contraseña 2</td>
                 <td>Dni</td>
+                <td>Email</td>
                 <td>Opciones</td>
             </tr>
             <?php
                 $cnx = mysqli_connect("localhost", "root", "root", "blog");
-                $sql = "SELECT id, usuario, contrasenia, rol_id, nombre, apellido, contrasenia2, dni FROM usuarios";
+                $sql = "SELECT id, usuario, contrasenia, rol_id, nombre, apellido, contrasenia2, dni, email FROM usuarios";
                 $rta = mysqli_query($cnx, $sql); 
                 while($mostrar = mysqli_fetch_row($rta)){
                 ?>
@@ -98,6 +100,7 @@
                       <td><?php echo $mostrar['5'] ?></td> 
                       <td><?php echo $mostrar['6'] ?></td>
                       <td><?php echo $mostrar['7'] ?></td>  
+                      <td><?php echo $mostrar['8'] ?></td>  
                       <td>
                           <a href="editar.php?
                           id=<?php echo $mostrar['0'] ?> &
@@ -107,7 +110,8 @@
                           nombre=<?php echo $mostrar['4'] ?> &
                           apellido=<?php echo $mostrar['5'] ?> &
                           contrasenia2=<?php echo $mostrar['6'] ?> &
-                          dni=<?php echo $mostrar['7'] ?> 
+                          dni=<?php echo $mostrar['7'] ?> &
+                          email=<?php echo $mostrar['8'] ?>
                           ">Editar</a>
                           <a href="sp_eliminar.php? id=<?php echo $mostrar['0'] ?>">Eliminar</a>
                       </td>   

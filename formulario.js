@@ -9,7 +9,8 @@ const expresiones = {
     usuario: /^[a-zA-Z0-9\_\-]{4,15}$/,
     contrasenia: /^[a-zA-Z0-9\_\-]{4,15}$/,
     dni: /^[0-9]{8}[A-Z]$/,
-    rol_id:/^[2-3]{1}$/
+    rol_id:/^[2-3]{1}$/, 
+    email: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 } 
 
 //Creamos una constante campos para los campos de nuestro formulario
@@ -19,7 +20,8 @@ const campos = {
     usuario: false,
     contrasenia: false,
     dni: false,
-    rol_id: false
+    rol_id: false,
+    email: false
 }
 
 //Creamos una constante llamada validar formulario donde realizaremos un switch con la llamada a la constante expresiones
@@ -46,6 +48,9 @@ const validarFormulario = (e) =>{
             break;
         case "rol_id":
                 validar(expresiones.rol_id, e.target, 'rol_id');
+            break;
+        case "email":
+                validar(expresiones.email, e.target, 'email');
             break;
     }
 }
@@ -142,6 +147,7 @@ $(document).ready(function(){
             contrasenia2: $('#contrasenia').val(),
             dni: $('#dni').val(),
             rol_id: $('#rol_id').val(),
+            email: $('#email').val(),
             id: $('#taskId').val()
         };
 

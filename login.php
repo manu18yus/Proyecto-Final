@@ -30,6 +30,7 @@
 
        <div class="collapse navbar-collapse" id="navbarSupportedContent">
          <ul class="navbar-nav ml-auto">
+           <li class="nav-item"><a class="nav-link" href="inicio.php">Inicio</a></li>
            <li class="nav-item"><a class="nav-link" href="index.php">Principal</a></li>
            <li class="nav-item"><a class="nav-link" href="registro.php">Registro</a></li>
            <li class="nav-item"><a class="nav-link" href="login.php">Iniciar Sesión</a></li>
@@ -64,7 +65,7 @@
                       </div>
                     </div>
                   
-                    <button type="submit" class="btn btn-primary btn-block text-center" >Iniciar Sesión</button>
+                    <button type="submit" class="btn btn-warning btn-block text-center" >Iniciar Sesión</button>
                 </form>
             </div>
             </div>
@@ -94,7 +95,7 @@
             case 2:
                 header('location: colab.php');
             break;
-          //rol de usuario 
+          //rol de usuario    
             case 3:
               header('location: index.php');
             break;
@@ -116,8 +117,16 @@
         
         if($row == true){
             $rol = $row[3];
-            
+            $id = $row[0];
+            $email = $row[8];
+
             $_SESSION['rol'] = $rol;
+            $_SESSION['id'] = $id;
+            $_SESSION['email'] = $email;
+
+            header('location: email');
+
+            /*
             switch($rol){
                 //rol de administrador
                 case 1:
@@ -134,6 +143,7 @@
 
                 default:
             }
+            */
         }else{
             // no existe el usuario
             echo "Nombre de usuario o contraseña incorrecto";

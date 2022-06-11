@@ -51,10 +51,13 @@ if(!isset($_SESSION['rol'])){
          <a class="navbar-brand" href="carrito.php" title="ver carrito de compras">
           <img src="imagenes/carrito.png" alt="" width="30" >
           </a>
+          
+           <li class="nav-item"><a class="nav-link" href="inicio.php">Inicio</a></li>
            <li class="nav-item"><a class="nav-link" href="index.php">Principal</a></li>
            <li class="nav-item"><a class="nav-link" href="registro.php">Registro</a></li>
            <li class="nav-item"><a class="nav-link" href="login.php">Iniciar Sesión</a></li>
            <li class="nav-item"><a class="nav-link" href="contacto.php">Contacto</a></li>
+           <li class="nav-item"><a class="nav-link" href="logout.php">Cerrar Sesión</a></li>
          </ul>
        </div>
      </div>
@@ -123,6 +126,9 @@ if(!isset($_SESSION['rol'])){
           <h6 class="text-uppercase fw-bold mb-4">
             Accesos Rapidos
           </h6>
+          <p>
+            <a href="inicio.php" class="text-reset">Inicio</a>
+          </p>
           <p>
             <a href="index.php" class="text-reset">Principal</a>
           </p>
