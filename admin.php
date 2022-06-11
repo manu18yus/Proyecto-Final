@@ -25,14 +25,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manuel Arqués Yus</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
     <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
 </head>
 <body>
 
+ <!-- NAVBAR -->
+ <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+     <div class="container-fluid">
+       <a class="navbar-brand" href="#">
+         <img src="imagenes/logo.png" alt="" width="200">
+       </a>
+       
+       <button class="navbar-toggler"
+       type="button" 
+       data-toggle="collapse"
+       data-target="#navbarSupportedContent"
+       aria-controls="navbarSupportedContent"
+       aria-expanded="false"
+       aria-label="Toogle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+
+       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul class="navbar-nav ml-auto">
+         <a class="navbar-brand" href="carrito.php" title="ver carrito de compras">
+          <img src="imagenes/carrito.png" alt="" width="30" >
+          </a>
+          
+           <li class="nav-item"><a class="nav-link" href="inicio.php">Inicio</a></li>
+           <li class="nav-item"><a class="nav-link" href="index.php">Principal</a></li>
+           <li class="nav-item"><a class="nav-link" href="registro.php">Registro</a></li>
+           <li class="nav-item"><a class="nav-link" href="login.php">Iniciar Sesión</a></li>
+           <li class="nav-item"><a class="nav-link" href="contacto.php">Contacto</a></li>
+           <li class="nav-item"><a class="nav-link" href="logout.php">Cerrar Sesión</a></li>
+         </ul>
+       </div>
+     </div>
+   </nav>
+
 <!-- Esta es la zona para crear nuevos productos donde el administrador meterá el producto que quiera -->
 <div align="center">
-	<h3>Administración de la página</h3>
-    <li class="nav-item"><a class="nav-link" href="logout.php">Cerrar Sesión</a></li>
     </div>
         <h4>Crear nuevo productos</h4>
         <hr>
@@ -58,6 +92,7 @@
 		</ul>
         
     </div>
+
 
 
 <!-- Esto es un buscador de usuarios -->
@@ -119,8 +154,10 @@
                   <?php
                    }
                   ?>
-	        <script src="js/javaAdmin.js"></script>
         </table>
     </div>
+    <script type="text/javascript" src="js/javaIndex.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/javaAdmin.js"></script>
 </body>
 </html>
