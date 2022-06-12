@@ -31,4 +31,4 @@ mysqladmin -u $USERDB -p$USERDB create $BBDD
 mysql -u $USERDB -p$USERDB $BBDD < ../$DATOS
 
 # Mostramos url de carga
-echo "http://$HOST/Proyecto-Final/index.php"
+"http://$HOST/Proyecto-Final/index.php"

@@ -1,3 +1,21 @@
+<?php
+    session_start();
+    include ("config/database.php");
+?>
+<?php
+
+session_start();
+
+if(!isset($_SESSION['rol'])){
+    header('location: login.php');
+}else{
+    if($_SESSION['rol'] != 3){
+        header('location: login.php');
+    }
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,14 +24,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manuel Arqués Yus</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="css/estilo.css">
     <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
 </head>
 <body>
-    
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <div class="container-fluid">
+
+  <!-- NAVBAR -->
+   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+     <div class="container-fluid">
        <a class="navbar-brand" href="#">
          <img src="imagenes/logo.png" alt="" width="200">
        </a>
@@ -33,28 +51,44 @@
          <a class="navbar-brand" href="carrito.php" title="ver carrito de compras">
           <img src="imagenes/carrito.png" alt="" width="30" >
           </a>
+          
            <li class="nav-item"><a class="nav-link" href="inicio.php">Inicio</a></li>
            <li class="nav-item"><a class="nav-link" href="principal.php">Principal</a></li>
            <li class="nav-item"><a class="nav-link" href="registro.php">Registro</a></li>
            <li class="nav-item"><a class="nav-link" href="login.php">Iniciar Sesión</a></li>
            <li class="nav-item"><a class="nav-link" href="contacto.php">Contacto</a></li>
+           <li class="nav-item"><a class="nav-link" href="logout.php">Cerrar Sesión</a></li>
          </ul>
        </div>
+     </div>
+   </nav>
+
+  <!-- CARRUSEL DE IMAGENES -->
+
+  <div class="carousel slide" id="mainSlider" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="imagenes/zapas dior.jpg" alt="" class="d-block w-100 ">
+      </div>
+      <div class="carousel-item">
+        <img src="imagenes/yeezy 700.jpg" alt="" class="d-block w-100 ">
+      </div>
+      <div class="carousel-item">
+        <img src="imagenes/jordan travis scott.jpg" alt="" class="d-block w-100 ">
+      </div>
     </div>
-</nav>
+  </div>
 
 
-<body class="bg-dark">
-    <div class="row">
-        <div class="nombre col-6">
-            <h1 class="nombre">Zapas Arqués</h1>
-            <p>Manuel Arqúes Yus</p>
-        </div>
-        <div class="col-6">
-            <img class="logo" src="imagenes/logo.png" alt="" width="600">
-        </div>
-    </div>
-</body>
+<!-- Se muestra el main de una forma dinamica de los productos que hay almacenados en la base de datos-->
+<main>
+  <div class="container-fluid ">
+      <ul class="products-wrp" id="products-wrp">
+
+      </ul>
+  </div>
+ 
+</main>
 
 
 <!-- Footer-->
@@ -124,7 +158,9 @@
     </div>
   </section>
 </footer>
-    <script type="text/javascript" src="js/javaIndex.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+ 
+
+  <script type="text/javascript" src="js/javaIndex.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 </body>
 </html>

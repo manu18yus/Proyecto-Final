@@ -149,7 +149,9 @@ $(document).ready(function(){
             rol_id: $('#rol_id').val(),
             email: $('#email').val(),
             id: $('#taskId').val()
+
         };
+        console.log(postData);
 
         let url = edit === false ? 'agregar.php' : 'editar.php';
         console.log(url);

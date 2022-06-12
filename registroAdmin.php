@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro Manuel Arqués Yus</title>
+    <title>Registro del Administrador</title>
     <link rel="stylesheet" href="formulario.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
@@ -25,15 +25,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
    
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item"><a class="nav-link" href="inicio.php">Inicio</a></li>
-              <li class="nav-item"><a class="nav-link" href="principal.php">Principal</a></li>
-              <li class="nav-item"><a class="nav-link" href="registro.php">Registro</a></li>
-              <li class="nav-item"><a class="nav-link" href="login.php">Iniciar Sesión</a></li>
-              <li class="nav-item"><a class="nav-link" href="contacto.php">Contacto</a></li>
-            </ul>
-          </div>
+          
         </div>
       </nav>
    
@@ -117,10 +109,10 @@
                         <p class="formulario__input-error">El Dni intorucido no es correcto, introduzca la letra en mayusculas</p>
                         </div>
 
-                        <div class="formulario__conjunto" id="grupo__rol_id">
+                        <div class="formulario__conjunto" id="grupo__rol">
                           <label>Id</label><br>
                       <div class="form-conjunto-input">
-                          <input type="text" name="rol_id" id="rol_id" placeholder="Escriba el rol que quiera" class="form-control">
+                          <input type="text" name="rol_id" id="rol_id" placeholder="Administrador" class="form-control" value="1" readonly>
                           <img class="bien" src="check.png">
                           <img class="mal" src="cerrar.png">
                       </div>

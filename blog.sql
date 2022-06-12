@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 10-06-2022 a las 23:05:50
+-- Tiempo de generación: 12-06-2022 a las 20:49:38
 -- Versión del servidor: 8.0.28
 -- Versión de PHP: 8.0.16
 
@@ -45,7 +45,7 @@ INSERT INTO `productos` (`id`, `nombre`, `precio`, `imagen`, `descripcion`, `cod
 (2, 'Zapatilla deportiva Louis Vuitton', '800', 'zapatillas LV.jpg', 'Estas zapatillas tienen un diseño atractivo de la famosa marca Louis Vuitton', 'zLV'),
 (3, 'Nike SB Dunk Travis Scott', '2500', 'nikeSB.jpg', 'Colaboración de Travis Scott con Nike para hacer unas increibles zapatillas', 'nSBTS'),
 (4, 'Dior sneaker', '925', 'dior.jpg', 'Zapatillas de la marca Dior con estampado del nombre de la marca por la zapatilla', 'dior'),
-(6, 'Nike X Off White', '3.623', 'off wlhite.jpg', 'Colaboración de Nike con Off White para crear esta maravilla', 'nOW'),
+(6, 'Nike X Off White', '3.623', 'null', 'Colaboración de Nike con Off White para crear esta maravilla', 'nOW'),
 (8, 'Yeezy 300 V2 ', '350', '8.jpg', 'Increibles zapatillas deportivas de la marca Adidas', 'y300');
 
 -- --------------------------------------------------------
@@ -93,13 +93,12 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id`, `usuario`, `contrasenia`, `rol_id`, `nombre`, `apellido`, `contrasenia2`, `dni`, `email`, `token`) VALUES
 (1, 'manu', 'manu', 2, 'manu', 'manu', 'manu', '45315974V', '', ''),
-(2, 'admin', 'admin', 1, 'admin', 'admin\r\n', 'admin', '45315974G', 'manu12yus@hotmail.com', '49b6db5ae25572c0850306b5'),
 (3, 'INMA', 'maria ', 2, 'maria ', 'maria ', 'maria ', '45315974V', '', '1'),
 (5, 'pokemon', 'root', 3, 'adkfl', 'adsf', 'admin', '45315974V', '', ''),
 (6, 'booooo', 'adsga ', 2, 'asdga ', 'dsga ', 'g ', '45315974V', '', ''),
-(9, 'usuario ', 'usuario ', 3, 'usuario ', ' usuario', 'usuario', '43253232V', 'manu12yus@hotmail.com', '220114a33fb15d7a187de989'),
+(9, 'usuario ', 'usuario ', 3, 'usuario ', ' usuario', 'usuario', '43253232V', 'manu12yus@hotmail.com', '9aaffa4a39da0285fd3d2175'),
 (14, 'prueba', 'prueba', 2, 'prueba', '', '', '45315974V', 'cobrarques@gmail.com', NULL),
-(15, 'hola ', 'hola ', 2, 'hola ', 'hola ', 'hola ', 'hola ', 'holda@gmail.com', NULL);
+(15, 'holaaa', 'hola  ', 2, 'hola  ', 'hola  ', 'hola  ', 'hola  ', 'holda@gmail.com', NULL);
 
 --
 -- Índices para tablas volcadas
