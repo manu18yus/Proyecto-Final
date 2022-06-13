@@ -63,21 +63,6 @@ if(!isset($_SESSION['rol'])){
      </div>
    </nav>
 
-  <!-- CARRUSEL DE IMAGENES -->
-
-  <div class="carousel slide" id="mainSlider" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="imagenes/zapas dior.jpg" alt="" class="d-block w-100 ">
-      </div>
-      <div class="carousel-item">
-        <img src="imagenes/yeezy 700.jpg" alt="" class="d-block w-100 ">
-      </div>
-      <div class="carousel-item">
-        <img src="imagenes/jordan travis scott.jpg" alt="" class="d-block w-100 ">
-      </div>
-    </div>
-  </div>
 
 
 <!-- Se muestra el main de una forma dinamica de los productos que hay almacenados en la base de datos-->
