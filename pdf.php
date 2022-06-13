@@ -6,7 +6,7 @@ use Dompdf\Dompdf;
 
 include_once "dompdf/autoload.inc.php";
 $pdf=new Dompdf();
-$html=file_get_contents("http://192.168.1.50/prueba/producto.php?id=2");
+$html=file_get_contents("http://192.168.1.50/Proyecto-Final/producto.php?id=2");
 $pdf->loadHtml($html);
 $pdf->setPaper("A4","landingpage");
 $pdf->render();
