@@ -1,0 +1,57 @@
+.formulario__grupo-correcto{
+	background-color: green;
+}
+
+.formulario__grupo-error{
+	background-color: red;
+}
+
+p{
+	display: none;
+}
+
+.formulario__input-error {
+	display: none;
+    
+}
+.formulario__input-error-activo {
+	display: inline;
+    
+}
+
+.bien, .mal{
+    height: 20px;
+    vertical-align: middle;
+    float: left;
+	display: none;
+}
+.mostrar{
+    display: inline;
+}
+
+
+.card-body{
+	border: solid 1px white;
+	background-color: #8c6b2d;
+}
+
+.navbar-brand{
+	color: black;
+}
+
+.texto_blanco{
+	color: white;
+}
+
+#boton{
+	color: white;
+	background-color:  #feb221;
+}
+
+.boton{
+width: 50%;
+display: flex;
+text-align: center;
+margin: auto;
+margin-top: 2rem;
+}

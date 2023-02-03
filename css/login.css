@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2? family= Rubik:wght@300;400;600 & display=swap');
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    font-family: 'Rubik', sans-serif;
+    min-height: 100vh;
+    background:  linear-gradient(to right, #363635, #feb221);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tarjeta_login{
+    width: 450px;
+    background: rgba(255, 255, 255, .5);
+    padding: 4rem;
+    border-radius: 10px;
+    position: relative;
+}
+
+.tarjeta_login::before{
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, .15);
+    inset: 0;
+    transform: rotate(-5deg);
+    z-index: -1;
+}
+
+.tarjeta_login_logo img{
+    width: 160px;
+}
+
+.tarjeta_login_logo, .tarjeta_login_header, .tarjeta_login_footer{
+    text-align: center;
+}
+
+.tarjeta_login a {
+    text-decoration: none;
+    color: #feb221;
+}
+
+.tarjeta_login a:hover{
+    text-decoration: underline;
+}
+
+.tarjeta_login_header{
+    margin-bottom: 2rem;
+}
+
+.tarjeta_login_header h1{
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    margin-bottom: .5rem;
+}
+
+.formulario__conjunto{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    margin-bottom: .5rem;
+}
+
+.formulario .formulario__conjunto{
+    position: relative;
+}
+
+.formulario .formulario__conjunto .formualario_objeto_icono{
+    position: absolute;
+    top: .83rem;
+    left: 1.4rem;
+    font-size: 1.3rem;
+    opacity: .4;
+}
+
+.tarjeta_login_footer{
+    margin-top: 1.5rem;
+    font-size: 1rem;
+}
+
+.tarjeta_login input[type="text"], .tarjeta_login input[type="password"]{
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, .3);
+    padding: 1rem 1rem;
+    padding-left: 3.5rem;
+    border-radius: 100px;
+}
+
+.formulario button{
+    background: black;
+    color: white;
+    padding: 1rem;
+    border-radius: 100px;
+    width: 100%;   
+    margin-top: 1rem;
+    
+}
+
+.formulario button:hover{
+    background-color: rgba(0, 0, 0, .85);
+    cursor: pointer;
+}
+
+
+
+.formulario__grupo-correcto{
+	background-color: green;
+    border-radius: 40px;
+}
+
+.formulario__grupo-error{
+	background-color: red;
+    border-radius: 40px;
+}
+
+p{
+	display: none;
+}
+
+.formulario__input-error {
+	display: none;
+    
+}
+.formulario__input-error-activo {
+	display: inline;
+    
+}
+
+.bien, .mal{
+    height: 20px;
+    vertical-align: middle;
+    float: left;
+	display: none;
+}
+.mostrar{
+    display: inline;
+}
+
+
+@media(max-width: 768px){
+    body{
+        padding: 2rem 0;
+    }
+    .tarjeta_login{
+        width: 300px;
+        padding: 1.5rem;
+    }
+}

@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2? family= Rubik:wght@300;400;600 & display=swap');
+
+*{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    
+}
+
+body{
+    background:  linear-gradient(to right, #363635, #feb221);
+}
+
+nav{
+    background:  linear-gradient(to right, #363635, #feb221);
+    color: white;
+}
+
+#contenedor{
+    padding: 0;
+    margin: 0;
+    display:flex;
+    align-items: center;
+    background:  linear-gradient(to right, #363635, #feb221);
+    color: white;
+}
+
+ .inicio{
+    font-weight: 600;
+}
+
+.nombre_pagina{
+    text-align: center;
+    font-weight: 600;
+    margin-top: 5rem;
+}
+
+.nombre{
+    text-align: right;
+    margin-top: 5rem;
+}
+
+.panel{
+    margin: 2rem;
+    background-color: #aaaaaa; ;
+    height: 20rem;
+    color: white;
+}
+
+.texto_centrado{
+    text-align: center;
+    font-weight: 600;
+    margin-top: 5rem;
+}
+
+.ver_detalles{
+    margin-bottom: 0px;
+}
+
+.lista_blanca{
+    color: white;
+}
+
+.panel{
+    background-color: #8c6b2d;
+}
+
+.contenedor_usuarios{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+#boton{
+	color: white;
+	background-color:  #feb221;
+}
+
+#impresion{
+    width: 50%;
+    display: flex;
+    margin: auto;
+}
