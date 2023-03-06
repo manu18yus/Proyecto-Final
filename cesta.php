@@ -20,11 +20,12 @@
 </head>
 
 <body>
+  <!--Aqui se muestra el menu de navegación-->
     <div id="wrapper">
           <nav class="navbar navbar-expand-sm navbar-dark ">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="imagenes/logo.png" alt="" width="150">
+                    <img id="logo_inicio" src="imagenes/logo.png" alt="logotipo" width="150">
                 </a>
            
                 <button class="navbar-toggler"
@@ -52,7 +53,7 @@
               include ("header.php");
             ?>
           </nav>
-
+        <!--Aqui se encuentrá la información de la pagina -->
         <div id="page-wrapper">
             <div class="container-fluid">
               
@@ -62,7 +63,7 @@
                   <p class="nombre">Manuel Arqués Yus</p>
                 </div>
                 <div class="col-6">
-                  <img class="logo" src="imagenes/logo.png" alt="" width="200">
+                  <img id="logo_medio" class="logo" src="imagenes/logo.png" alt="" width="200">
                 </div>
               </div>
 

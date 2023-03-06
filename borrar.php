@@ -5,9 +5,9 @@
     include('baseDatos.php');
 
     if(isset($_POST['id_usuario'])){
-
         $id_usuario = $_POST['id_usuario'];
 
+//Hacemos una consulta con la sentencia delete para eliminar a un usuario basandonos en  su id
         $query = "DELETE FROM usuario WHERE id_usuario = $id_usuario";
         $result = mysqli_query($connection, $query);
 

@@ -20,9 +20,10 @@ $(document).ready(function(){
                     let template = '';
 
                     tarea.forEach(formulario => {
-                        template += `<li>
-                            ${formulario.user}
-                        </li>`
+                        template += `<li class="texto_blanco">
+                        ${formulario.user}
+                        <button  class="edit-task btn btn-warning" taskId="${formulario.id_usuario}">Editar</button>
+                    </li>`
                     });
                     $('#container').html(template);
                     $('#task-result').show();
@@ -44,14 +45,15 @@ $(document).ready(function(){
 
         let url = edit === false ? 'agregar.php' : 'editar.php';
         console.log(url);
-        
+    
         $.post(url, postData, function(response) {
             console.log(response);
             fetchTasks();
-           $('#task-form').trigger('reset');
+            $('#formulario')[0].reset();
         });
         e.preventDefault();
     });
+
     
 //Con está función lo que haremos será mostrar por pantalla una tabla y añadiremos tambien el botón de eliminar
 //al lado de cada uno de los datos insertados pondremos el botón de eliminar     
@@ -64,16 +66,16 @@ $(document).ready(function(){
                 let template = '';
                 tasks.forEach(formulario =>{
                     template += `
-                        <tr taskId="${formulario.id_usuario}">
+                        <tr class='lista_blanca' taskId="${formulario.id_usuario}">
                             <td>${formulario.id_usuario}</td>
                             <td>
                                 <a href="#" class="task-item">${formulario. user}</a>
                             </td>
                             <td>${formulario.correo}</td>
                             <td>${formulario.pass}</td>
-                            <td>${formulario.rol_id}</td>
+                            <td>${formulario.rol}</td>
                             <td>
-                                <button class="task-delete btn btn-danger">Eliminar</button>
+                                <button  class="task-delete btn btn-danger">Eliminar</button>
                             </td>
                         </tr>
                     `
@@ -83,7 +85,6 @@ $(document).ready(function(){
         });
     }
 
-    
 //Con esta función lo que haremos será eliminar los datos de la fila que nosotros queramos, además de pedir una confirmación 
 //por pantalla para poder eliminar los datos o no     
     $(document).on('click', '.task-delete', function() {
@@ -112,5 +113,21 @@ $(document).ready(function(){
             edit=true;
         })
     })
+
+//Con esta función lo que se lográ hacer es que cuando se llama a la función de buscar usuario y se presiona el botón de editar 
+//aparezcan los valores del usuario y se puedan editar    
+    $(document).on('click', '.edit-task', function() {
+        let taskId = $(this).attr('taskId');
+        $.post('tareaUnica.php', {id_usuario: taskId}, function(response){
+            const tarea = JSON.parse(response);
+            $('#correo').val(tarea.correo);
+            $('#user').val(tarea.user);
+            $('#pass').val(tarea.pass);
+            $('#rol_id').val(tarea.rol_id);
+            $('#taskId').val(tarea.id_usuario);
+            edit=true;
+        });
+    });
+    
 
 });

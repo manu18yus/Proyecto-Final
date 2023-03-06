@@ -18,12 +18,12 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-
+<!--Aqui se muestra el menu de navegación-->
     <div id="wrapper">
         <nav class="navbar navbar-expand-sm navbar-dark ">
             <div class="container-fluid">
                 <a class="navbar-brand" href="inicio.php">
-                    <img src="imagenes/logo.png" alt="" width="150">
+                    <img id="logo_inicio" src="imagenes/logo.png" alt="logotipo" width="150">
                 </a>
            
                 <button class="navbar-toggler"
@@ -51,13 +51,14 @@
             ?>
         </nav>
          
+        <!--Aqui se encuentrá la información de la pagina -->
         <div class="row" id="contenedor">
         <div class= "col-6">
             <h1 class="nombre_pagina">Pujas Arqués</h1>
             <p class="nombre">Manuel Arqués Yus</p>
         </div>
         <div class="col-6">
-            <img class="logo" src="imagenes/logo.png" alt="" width="200">
+            <img id="logo_medio" class="logo" src="imagenes/logo.png" alt="" width="200">
         </div>
         </div>
 
@@ -96,7 +97,8 @@
                   $count_sub_cerr = $data['total'];//En esta variable se guardan el total
                 ?>
 
-
+<!--Dividimos la pagina en tres partes y cada parte cuenta con un cuadrado que redirecciona mediante un boton-->
+<!--Aqui las licitaciones que estan en subasta-->
 <div class="row">
       <div class="col-lg-4 col-md-6">
         <div class="panel">
@@ -111,16 +113,13 @@
               </div>
             </div>
           </div>
-          <a href="subastas.php">
+
           <div class="panel-footer">
-            <span class="ver_detalles">Ver detalles</span>
-            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-            <div class="clearfix"></div>
+          <input type="button" id="boton_inicio" class="btn btn-block text-center" value="Ver detalles" onClick="window.location.href='subastas.php' ">
           </div>
-          </a>
         </div>
       </div>
-                     
+<!--Aqui las licitaciones que estan cerradas y las que están abiertas aunque el numero solo se centra en las licitaciones cerradas del usuario-->                    
       <div class="col-lg-4 col-md-6">
         <div class="panel">
           <div class="panel-heading">
@@ -130,20 +129,17 @@
               </div>
               <div class="col-xs-9 texto_centrado">
                 <div class="huge"><?php echo $count_sub_cerr;//Aqui se imprime el total?></div>
-                <div>LICITACIONES SUBASTADAS</div>
+                <div>LICITACIONES CERRADAS</div>
               </div>
             </div>
           </div>
-          <a href="cuenta.php">
+
             <div class="panel-footer">
-              <span class="ver_detalles">Ver detalles</span>
-              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-              <div class="clearfix"></div>
+              <input type="button" id="boton_inicio" class="btn btn-block text-center" value="Ver detalles" onClick="window.location.href='cuenta.php' ">
             </div>
-          </a>
         </div>
       </div>
-      
+      <!--Aqui la cesta del usuario-->
       <div class="col-lg-4 col-md-6">
         <div class="panel">
           <div class="panel-heading">
@@ -157,13 +153,10 @@
               </div>
             </div>
           </div>
-          <a href="cesta.php">
+          
           <div class="panel-footer">
-            <span class="ver_detalles">Ver detalles</span>
-            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-            <div class="clearfix"></div>
+          <input type="button" id="boton_inicio" class="btn btn-block text-center" value="Ver detalles" onClick="window.location.href='cesta.php' ">
           </div>
-          </a>
         </div>
       </div>
     </div>

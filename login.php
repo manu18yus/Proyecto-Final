@@ -37,7 +37,7 @@ $filas=mysqli_fetch_array($resultado);
 
 $result = $bd->select($consulta);
 
-
+//Dependiendo del rol que tenga el usuario podrá acceder a una pagina o otra
 if($result->num_rows > 0){
   while($row = $result->fetch_assoc()){
     $id_us = $row["id_usuario"];
@@ -59,7 +59,7 @@ if($result->num_rows > 0){
 }
 
 ?>
-
+<!--Aqui se muestra un formulario donde se le pide al usuario un usuario y una contraseña para poder acceder-->
     <div class="contenedor">
         <div class="tarjeta_login">
             <div class="tarjeta_login_logo">

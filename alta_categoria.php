@@ -30,18 +30,23 @@
       $res = $bd->query("INSERT into categoria(categoria, descripcion) values('$categoria','$descripcion');");
 
       if($res==true){
-        echo "<script>alert('Categoria agregada correctamente');</script>";
+        echo "<script>window.onload = () => {
+          alert('Categoria agregada correctamente');
+        }</script>";
       }else{
-        echo "<script>alert('No se pudo agregar categoria');</script>";
+        echo "<script>window.onload = () => {
+          alert('No se pudo agregar categoria');
+        }</script>";
       }
     }
   ?>
 
+<!--Aqui se muestra el menu de navegación-->
     <div id="wrapper">
         <nav class="navbar navbar-expand-sm navbar-dark ">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="imagenes/logo.png" alt="" width="150">
+                    <img id="logo_inicio" src="imagenes/logo.png" alt="logotipo" width="150">
                 </a>
            
                 <button class="navbar-toggler"
@@ -70,14 +75,14 @@
             ?>
         </nav>
 
-         
+        <!--Aqui se encuentrá la información de la pagina -->
         <div class="row" id="contenedor">
         <div class= "col-6">
             <h1 class="nombre_pagina">Pujas Arqués</h1>
             <p class="nombre">Manuel Arqués Yus</p>
         </div>
         <div class="col-6">
-            <img class="logo" src="imagenes/logo.png" alt="" width="200">
+            <img id="logo_medio" class="logo" src="imagenes/logo.png" alt="" width="200">
         </div>
         </div>
 
@@ -92,27 +97,29 @@
                         </ol>
                     </div>
                 </div>
+<!--Aqui se muestra un pequeño formulario donde estan los campos de nombre y descripción para que el usuario creé una nueva categoria-->
+                <div class="row" id="agregar_licitacion">
+                  <div class="col-lg-6">
+                    <form  role="form" action="" method="post" enctype="multipart/form-data">
 
-                      <div class="row">
-                          <div class="col-lg-6">
-                            <form role="form" action="" method="post" enctype="multipart/form-data">
-
-                                <div class="form-group">
-                                    <label class="lista_blanca">Nombre</label>
-                                    <input type="text" name="categoria" class="form-control" required>
-                                </div>
-
-                                  <div class="form-group">
-                                      <label class="lista_blanca">Descripcion</label>
-                                      <textarea name="descripcion" class="form-control" required></textarea>
-                                  </div>
-                                  <br>
-                                  <button name="agregar" type="submit" class="btn btn-success">Agregar</button>
-                                  <button type="reset" class="btn btn-danger">Cancelar</button>
-                                  
-                                </form>
-                          </div>
+                      <div class="form-group">
+                        <label class="lista_blanca">Nombre
+                          <input id="input_agregar" type="text" name="categoria" class="form-control" required>
+                        </label>
                       </div>
+
+                      <div class="form-group">
+                        <label class="lista_blanca">Descripcion
+                          <textarea id="input_agregar" name="descripcion" class="form-control" required></textarea>
+                        </label>
+                      </div><br>
+                                
+                      <button name="agregar" type="submit" id="boton_medio" class="btn">Agregar</button>
+                      <button type="reset" class="btn btn-danger">Cancelar</button>
+                                  
+                    </form>
+                  </div>
+                </div>
             </div>
         </div>
     </div>

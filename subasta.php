@@ -38,17 +38,25 @@
           if($oferta == $max){
             $res_1 = $bd->query("INSERT into oferta(oferta, estado, fecha, id_subasta, comprador) values($oferta, 1, '$fecha_hora_actual',$id_sub_1, $id_user_1);");
             if($res_1 == false){
-              echo "<script>alert('No se ha podido ofertar');</script>";
+              echo "<script>window.onload = () => {
+                  alert('No se ha podido ofertar');
+                }</script>";
             }else{
               $res_2 = $bd->query("INSERT into cesta(id_usuario, id_subasta) values($id_user_1,$id_sub_1);");
               if($res_2 == false){
-                echo "<script>alert('No se pudo agregar la licitación a la cesta');</script>";
+                echo "<script>window.onload = () => {
+                  alert('No se pudo agregar la licitación a la cesta');
+                }</script>";
               }else{
                 $res_2_1 = $bd->query("UPDATE subasta set estado=1, comprador=$id_user_1 where id_subasta=$id_sub_1;");
                 if($res_2_1 == false){
-                  echo "<script>alert('No se pudo actualizar la subasta');</script>";
+                  echo "<script>window.onload = () => {
+                    alert('No se pudo actualizar la subasta');
+                  }</script>";
                 }else{
-                  echo "<script>alert('¡VENDIDO!');</script>";
+                  echo "<script>window.onload = () => {
+                    alert('¡VENDIDO!');
+                  }</script>";
                 }
               }
             }
@@ -56,13 +64,19 @@
           }else{
             $res_1 = $bd->query("INSERT into oferta(oferta, estado, fecha, id_subasta, comprador) values($oferta, 0, '$fecha_hora_actual',$id_sub_1, $id_user_1);");
             if($res_1 == false){
-              echo "<script>alert('No se ha podido ofertar');</script>";
+              echo "<script>window.onload = () => {
+                alert('No se ha podido ofertar');
+              }</script>";
             }else{
               $res_2_1 = $bd->query("UPDATE subasta set comprador=$id_user_1 where id_subasta=$id_sub_1;");
               if($res_2_1 == false){
-                echo "<script>alert('No se pudo actualizar la puja');</script>";
+                echo "<script>window.onload = () => {
+                  alert('No se pudo actualizar la puja');
+                }</script>";
               }else{
-                echo "<script>alert('Oferta realizada con exito');</script>";
+                echo "<script>window.onload = () => {
+                  alert('Oferta realizada con exito');
+                }</script>";
               }
             }
           }
@@ -76,28 +90,36 @@
 
           $res_1 = $bd->query("INSERT into oferta(oferta, estado, fecha, id_subasta, comprador) values($oferta, 1, '$fecha_hora_actual',$id_sub_1, $id_user_1);");
           if($res_1 == false){
-            echo "<script>alert('No se ha podido ofertar');</script>";
+            echo "<script>window.onload = () => {
+              alert('No se ha podido ofertar');
+            }</script>";
           }else{
             $res_2 = $bd->query("INSERT into cesta(id_usuario, id_subasta) values($id_user_1,$id_sub_1);");
             if($res_2 == false){
-              echo "<script>alert('No se pudo agregar la licitación a la cesta');</script>";
+              echo "<script>window.onload = () => {
+                alert('No se pudo agregar la licitación a la cesta');
+              }</script>";
             }else{
               $res_2_1 = $bd->query("UPDATE subasta set estado=1, comprador=$id_user_1 where id_subasta=$id_sub_1;");
               if($res_2_1 == false){
-                echo "<script>alert('No se pudo actualizar la subasta');</script>";
+                echo "<script>window.onload = () => {
+                  alert('No se pudo actualizar la subasta');
+                }</script>";
               }else{
-                echo "<script>alert('¡VENDIDO!');</script>";
+                echo "<script>window.onload = () => {
+                  alert('¡VENDIDO!');
+                }</script>";
               }
             }
           }
       }
     ?>
-
+<!--Aqui se muestra el menu de navegación-->
     <div id="wrapper">
         <nav class="navbar navbar-expand-sm navbar-dark ">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="imagenes/logo.png" alt="" width="150">
+                    <img id="logo_inicio" src="imagenes/logo.png" alt="logotipo" width="150">
                 </a>
            
                 <button class="navbar-toggler"
@@ -125,7 +147,7 @@
               include ("header.php");
             ?>
           </nav>
-
+        <!--Aqui se encuentrá la información de la pagina -->
         <div id="page-wrapper">
             <div class="container-fluid">
 
@@ -135,7 +157,7 @@
                   <p class="nombre">Manuel Arqués Yus</p>
                 </div>
                 <div class="col-6">
-                  <img class="logo" src="imagenes/logo.png" alt="" width="200">
+                  <img id="logo_medio" class="logo" src="imagenes/logo.png" alt="" width="200">
                 </div>
               </div>
 
@@ -197,137 +219,137 @@
 
                                   /*Aqui se mostraran las licitaciones que tienen una oferta ya*/
                                   ?>
-                                  <div class="col-sm-6 col-md-6">
-                                      <?php
-                                        //Aqui se mostrara la imagen de la licitación en grande
-                                        echo "<img src='imagenes/productos/$imagen_p' style='max-height: 450px; width: 100%;'>";
-                                      ?>
-                                  </div>
-                                  <div class="col-sm-6 col-md-6">
-                                    <div class="thumbnail">
-                                      <?php?>
-                                      <div class="caption">
-                                        <?php
-                                          if($estado == 1 && $ofertante_comp != null){
-                                            echo "<h1 class='text-danger'>VENDIDO | SOLD</h1>";
-                                          }
-                                        ?>
-                                        <h2 class="text-success"><?php echo $nombre_p; ?></h2>
-                                        <h4 class="text-info"><?php echo $descripcion_p; ?></h4>
-                                        <p class="lista_blanca text-right"><i class="fa fa-tag"></i> <?php echo $categoria; ?></p>
-                                        <hr style="margin: 1px 1px 1px 1px;">
 
-                                        <p>Producto publicado el <?php echo "<b>$ini</b>"; ?></p>
-                                        <p><?php //print $interval->format('%R %a días %H horas %I minutos'); ?></p>
+                      <!--Con esto lo que hacemos es separar el contenido en dos esta es la parte de la imagen-->            
+                      <div class="col-sm-6 col-md-6">
+                        <div class="card">
+                          <?php
+                          // Aquí se mostrará la imagen de la licitación en grande
+                          echo "<img class='card-img-top' src='imagenes/productos/$imagen_p' alt='$nombre_p' style='max-height: 450px; width: 100%;'>";
+                          ?>
+                        </div>
+                      </div>
+                    <!--Se muestra las licitaciones que tienen actualmente una oferta en forma de tarjeta ocupando la otra mitad de la página-->
+                      <div class="col-sm-6 col-md-6 text-center">
+                        <div class="card">
+                          <div class="card-body">
+                            <?php
+                              if($estado == 1 && $ofertante_comp != null){
+                                echo "<h1 class='text-danger'>VENDIDO | SOLD</h1>";
+                              }
+                            ?>
+                            <h2 class="lista_negra"><?php echo $nombre_p; ?></h2>
+                            <h4 class="lista_negra"><?php echo $descripcion_p; ?></h4>
+                            <p class="lista_negra text-right"><i class="fa fa-tag"></i> <?php echo $categoria; ?></p>
+                            <hr>
 
-                                        <p id="tiempo"></p>
-                                        <input type="hidden" id="limite" value="<?php echo $fin; ?>">
+                            <p>Producto publicado el <?php echo "<b>$ini</b>"; ?></p>
+                            <p><?php //print $interval->format('%R %a días %H horas %I minutos'); ?></p>
 
-                                        <p><?php echo "<b>Ofertantes:</b> $count_ofert";?></p>
-                                        <p><?php echo "<b>Oferta minima:</b> $$min.00"; ?></p>
-                                        <p><?php echo "<b>Oferta maxima:</b> $$max.00"; ?></p>
-                                        <h4>Oferta actual: <b class="text-danger"><?php echo "$$oferta.00"; ?></b></h4>
+                            <p id="tiempo"></p>
+                            <input type="hidden" id="limite" value="<?php echo $fin; ?>">
 
-                                        <form class="form-inline" action="" method="post">
+                            <p><?php echo "<b>Ofertantes:</b> $count_ofert";?></p>
+                            <p><?php echo "<b>Oferta minima:</b> €$min.00"; ?></p>
+                            <p><?php echo "<b>Oferta maxima:</b> €$max.00"; ?></p>
+                            <h4>Oferta actual: <b class="text-danger"><?php echo "€$oferta.00"; ?></b></h4>
 
-                                          <input type="hidden" name="id_user" value="<?php echo $_SESSION['id_usuario']; ?>">
-                                          <input type="hidden" name="id_sub" value="<?php echo $id_sub; ?>">
-                                          <input type="hidden" name="max" value="<?php echo $max; ?>">
-                                          <input type="hidden" name="fin" value="<?php echo $fin; ?>">
+                            <form class="form-inline" action="" method="post">
 
-                                          <?php
-                                            if($estado == 1 || $_SESSION["id_usuario"] == $ofertante_comp || $_SESSION["id_usuario"] == $subastador){
-                                              ?>
+                              <input type="hidden" name="id_user" value="<?php echo $_SESSION['id_usuario']; ?>">
+                              <input type="hidden" name="id_sub" value="<?php echo $id_sub; ?>">
+                              <input type="hidden" name="max" value="<?php echo $max; ?>">
+                              <input type="hidden" name="fin" value="<?php echo $fin; ?>">
 
-                                              <div class="form-group">
-                                                <input type="number" disabled name="oferta" max="<?php echo $max;?>" min="<?php echo $oferta+1;?>" class="form-control" value="<?php echo $oferta+1;?>">
-                                              </div>
+                              <?php
+                                if($estado == 1 || $_SESSION["id_usuario"] == $ofertante_comp || $_SESSION["id_usuario"] == $subastador){
+                              ?>
+                              <div class="form-group">
+                                <input type="number" disabled name="oferta" max="<?php echo $max;?>" min="<?php echo $oferta+1;?>" class="form-control" value="<?php echo $oferta+1;?>">
+                              </div>
 
-                                              <button type="submit" disabled class="btn btn-warning" name="ofertar">Mejorar oferta</button>
-                                              <button type="submit" disabled class="btn btn-success" name="comprar">Comprar ahora</button>
+                              <button id="boton_subasta" type="submit" disabled class="btn btn-warning" name="ofertar">Mejorar oferta</button>
+                              <button id="boton_subasta" type="submit" disabled class="btn btn-dark" name="comprar">Comprar ahora</button>
 
-                                              <?php
-                                            }elseif($estado == 0){
-                                              ?>
-                                              <div class="form-group">
-                                                <input type="number" name="oferta" max="<?php echo $max;?>" min="<?php echo $oferta+1;?>" class="form-control" value="<?php echo $oferta+1;?>">
-                                              </div>
+                              <?php
+                                }elseif($estado == 0){
+                              ?>
+                              <div class="form-group">
+                                <input type="number" name="oferta" max="<?php echo $max;?>" min="<?php echo $oferta+1;?>" class="form-control" value="<?php echo $oferta+1;?>">
+                              </div>
 
-                                              <button type="submit" class="btn btn-warning" name="ofertar">Mejorar oferta</button>
-                                              <button type="submit" class="btn btn-success" name="comprar">Comprar ahora</button>
+                              <button id="boton_subasta" type="submit" class="btn btn-warning" name="ofertar">Mejorar oferta</button>
+                              <button id="boton_subasta" type="submit" class="btn btn-dark" name="comprar">Comprar ahora</button>
 
-                                              <?php
-                                            }
-                                          ?>
+                              <?php
+                                }
+                              ?>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
 
-
-                                        </form>
-                                      </div>
-                                    </div>
-                                  </div>
                                   <?php
                                   /*Fin de las licitaciones que tienen una oferta ya*/
-                                }
-                              }else{
+                                  }
+                                  }else{
 
-                                /*Aqui se mostraran las licitaciones que aun no tienen oferta*/
-                                ?>
+                                  /*Aqui se mostraran las licitaciones que aun no tienen oferta*/
+                                    ?>
+
                                       <div class="col-sm-6 col-md-6">
+                                        <div class="card">
                                           <?php
-                                            //Aqui se mostrara la imagen de la licitación en grande
-                                            echo "<img src='imagenes/productos/$imagen_p' style='max-height: 450px; width: 100%;'>";
+                                          // Aquí se mostrará la imagen de la licitación en grande
+                                          echo "<img class='card-img-top' src='imagenes/productos/$imagen_p' alt='$nombre_p' style='max-height: 450px; width: 100%;'>";
                                           ?>
+                                        </div>
                                       </div>
-                                      <div class="col-sm-6 col-md-6">
-                                        <div class="thumbnail">
-                                          <?php //echo "<img src='imagenes/productos/$imagen_p' style='height: 220px;'>";?>
-                                          <div class="caption">
-                                            <h2 class="text-success"><?php echo $nombre_p; ?></h2>
-                                            <h4 class="text-info"><?php echo $descripcion_p; ?></h4>
-                                            <p class="lista_blanca text-right"><i class="fa fa-tag"></i> <?php echo $categoria; ?></p>
-                                            <hr style="margin: 1px 1px 1px 1px;">
-                                            <p>Producto publicado el <?php echo "<b>$ini</b>"; ?></p>
-                                            <p><?php //print $interval->format('%R %a días %H horas %I minutos'); ?></p>
 
+                                      <!--A continuación se muestra la otra mitad de la página en forma de tarjeta las licitaciones que no tienen todavía ninguna oferta-->
+                                      <div class="col-sm-6 col-md-6">
+                                        <div class="card">
+                                          <div class="card-body text-center">
+                                            <h2 class="card-title lista_negra"><?php echo $nombre_p; ?></h2>
+                                            <h4 class="card-text lista_negra"><?php echo $descripcion_p; ?></h4>
+                                            <p class="lista_negra text-right"><i class="fa fa-tag"></i> <?php echo $categoria; ?></p>
+                                            <hr>
+                                            <p class="card-text">Producto publicado el <?php echo "<b>$ini</b>"; ?></p>
+                                            <p class="card-text"><?php //print $interval->format('%R %a días %H horas %I minutos'); ?></p>
                                             <p id="tiempo"></p>
                                             <input type="hidden" id="limite" value="<?php echo $fin; ?>">
-
-                                            <p><?php echo "<b>Oferta minima:</b> $$min.00"; ?></p>
-                                            <p><?php echo "<b>Oferta maxima:</b> $$max.00"; ?></p>
-                                            <h4>Oferta actual: <b class="text-danger"><?php echo "$0.00"; ?></b></h4>
-
+                                            <p><?php echo "<b>Oferta mínima:</b> €$min.00"; ?></p>
+                                            <p><?php echo "<b>Oferta máxima:</b> €$max.00"; ?></p>
+                                            <h4>Oferta actual: <b class="text-danger"><?php echo "€0.00"; ?></b></h4>
                                             <form class="form-inline" action="" method="post">
-
                                               <input type="hidden" name="id_user" value="<?php echo $_SESSION['id_usuario']; ?>">
                                               <input type="hidden" name="id_sub" value="<?php echo $id_sub; ?>">
                                               <input type="hidden" name="max" value="<?php echo $max; ?>">
                                               <input type="hidden" name="fin" value="<?php echo $fin; ?>">
-
                                               <?php
                                                 if($_SESSION["id_usuario"] == $subastador){
-                                                  ?>
-                                                  <div class="form-group">
-                                                    <input type="number" disabled name="oferta" class="form-control" max="<?php echo $max;?>" min="<?php echo $min;?>" value="<?php echo $min;?>">
-                                                  </div>
-
-                                                  <button type="submit" disabled class="btn btn-info" name="ofertar">Ofertar ahora</button>
-                                                  <button type="submit" disabled class="btn btn-success" name="comprar">Comprar ahora</button>
-                                                  <?php
+                                              ?>
+                                              <div class="form-group">
+                                                <input type="number" disabled name="oferta" class="form-control" max="<?php echo $max;?>" min="<?php echo $min;?>" value="<?php echo $min;?>">
+                                              </div>
+                                              <button id="boton_subasta" type="submit" disabled class="btn btn-warning" name="ofertar">Ofertar ahora</button>
+                                              <button id="boton_subasta" type="submit" disabled class="btn btn-dark" name="comprar">Comprar ahora</button>
+                                              <?php
                                                 }else{
-                                                  ?>
-                                                  <div class="form-group">
-                                                    <input type="number" name="oferta" class="form-control" max="<?php echo $max;?>" min="<?php echo $min;?>" value="<?php echo $min;?>">
-                                                  </div>
-
-                                                  <button type="submit" class="btn btn-info" name="ofertar">Ofertar ahora</button>
-                                                  <button type="submit" class="btn btn-success" name="comprar">Comprar ahora</button>
-                                                  <?php
+                                              ?>
+                                              <div class="form-group">
+                                                <input type="number" name="oferta" class="form-control" max="<?php echo $max;?>" min="<?php echo $min;?>" value="<?php echo $min;?>">
+                                              </div>
+                                              <button id="boton_subasta" type="submit" class="btn btn-warning" name="ofertar">Ofertar ahora</button>
+                                              <button id="boton_subasta" type="submit" class="btn btn-dark" name="comprar">Comprar ahora</button>
+                                              <?php
                                                 }
                                               ?>
                                             </form>
                                           </div>
                                         </div>
                                       </div>
+
                                 <?php
                               }
                             }
@@ -339,7 +361,6 @@
                         echo "<h3>Por el momento no existen licitaciones</h3>";
                       }
                   ?>
-
                 </div>
             </div>
         </div>

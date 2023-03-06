@@ -46,6 +46,7 @@ nav{
     background-color: #aaaaaa; ;
     height: 20rem;
     color: white;
+    border-radius: 5%
 }
 
 .texto_centrado{
@@ -62,6 +63,14 @@ nav{
     color: white;
 }
 
+#lista_blanca{
+    color: white;
+}
+
+.lista_negra{
+    color: black;
+}
+
 .panel{
     background-color: #8c6b2d;
 }
@@ -73,8 +82,29 @@ nav{
 }
 
 #boton{
-	color: white;
+	color: black;
 	background-color:  #feb221;
+}
+
+#boton_medio{
+    color: white;
+	background-color:  black;
+
+}
+
+#boton_inicio{
+	color: black;
+	background-color:  white;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+#boton_pdf{
+    display: flex;
+    margin-bottom: 1rem; 
+    justify-content: space-around;
 }
 
 #impresion{
@@ -82,3 +112,127 @@ nav{
     display: flex;
     margin: auto;
 }
+
+#agregar_licitacion{
+    width: 100%;
+    max-width: 130rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#contenedor_tarjeta {
+    margin-bottom: 2rem;
+}
+
+#boton_subasta{
+    margin: 1rem;
+}
+
+#input_agregar{
+    width: 45rem;
+}
+
+@media(max-width:800px){
+    #logo_inicio{
+        width: 150px;
+    }
+    #logo_medio{
+        width: 150px;
+    }
+
+    .nombre_pagina{
+        text-align: center;
+        font-weight: 600;
+        margin-top: 5rem;
+        width: 200px;
+    }
+
+    .nombre{
+        text-align: right;
+        margin-top: 5rem;
+    }
+
+    #input_agregar{
+        width: 30rem;
+    }
+}
+
+
+@media(max-width:559px){
+    #input_agregar{
+        width: 20rem;
+    }
+}
+
+@media(max-width:430px){
+
+    #contenedor {
+        display: flex;
+        flex-direction: column;
+    }
+    .col-6 {
+        width: 100%;
+    }
+
+    #logo_inicio{
+        width: 120px;
+    }
+
+    #logo_medio{
+        width: 120px;
+        display:none;
+    }
+
+    .nombre_pagina{
+        text-align: left;
+        font-weight: 600;
+        margin-top: 2rem;
+        width: 300px;
+    }
+
+    .nombre{
+        text-align: right;
+        margin-top: 1rem;
+    }
+
+    #input_agregar{
+        width: 20rem;
+    }
+}
+      
+
+@media(max-width:380px){
+    #contenedor {
+        display: flex;
+        flex-direction: column;
+    }
+    .col-6 {
+        width: 100%;
+    }
+
+    #logo_inicio{
+        width: 100px;
+    }
+
+    #logo_medio{
+        width: 100px;
+        display:none;
+    }
+
+    .nombre_pagina{
+        text-align: left;
+        font-weight: 600;
+        margin-top: 1rem;
+        width: 300px;
+    }
+
+    .nombre{
+        text-align: right;
+        margin-top: 1rem;
+    }
+
+}
+      

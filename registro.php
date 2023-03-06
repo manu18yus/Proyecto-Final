@@ -33,6 +33,7 @@
         $pass = $_POST["pass"];
         $rol_id = $_POST["rol_id"];
 
+//Cuando insertamos los valores a la base de datos le mandamos un correo al usuario y se le redirecciona a una pagina para que introduzca el token
         $query = "INSERT into usuario(correo, user, pass, rol_id) values('$correo','$user','$pass', '$rol_id');";
 
         $result = $bd->query($query);
@@ -48,6 +49,7 @@
       }
     ?>
 
+<!--A continuación se muestra la creación de un formulario para que el usuario introduzca un correo un usuario y una contraseña-->
 <div class="contenedor">
         <form id="formulario" class="formulario" method="post">
             <div class="tarjeta_login">
@@ -64,8 +66,8 @@
                         <span class="formulario_objeto_icono material-symbols-rounded">email</span>
                             <input name="correo" id="correo" class="form-control" type="text" placeholder="Introduzca un correo" required autofocus>
                         </div>
-                        <img class="bien" src="imagenes/check.png">
-                        <img class="mal" src="imagenes/cerrar.png">
+                        <img class="bien" alt="bien" src="imagenes/check.png">
+                        <img class="mal" alt="mal" src="imagenes/cerrar.png">
                         <p class="formulario__input-error">Introduzca un correo válido</p>
                     </div>
 
@@ -74,8 +76,8 @@
                         <span class="formulario_objeto_icono material-symbols-rounded">person</span>
                             <input name="user" id="user" class="form-control" type="text" placeholder="Introduzca un usuario" required >
                         </div>
-                        <img class="bien" src="imagenes/check.png">
-                        <img class="mal" src="imagenes/cerrar.png">
+                        <img class="bien" alt="bien" src="imagenes/check.png">
+                        <img class="mal" alt="mal" src="imagenes/cerrar.png">
                         <p class="formulario__input-error">Introduzca al menos 4 caracteres</p>
                     </div>
 
@@ -84,23 +86,24 @@
                         <span class="formulario_objeto_icono material-symbols-rounded">lock</span>
                             <input  name="pass" id="pass" class="form-control" type="password" placeholder="Introduzca una contraseña" required>
                         </div>
-                        <img class="bien" src="imagenes/check.png">
-                        <img class="mal" src="imagenes/cerrar.png">
-                        <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+                        <img class="bien" alt="bien" src="imagenes/check.png">
+                        <img class="mal" alt="mal" src="imagenes/cerrar.png">
+                        <p class="formulario__input-error">Contraseña incorrecta</p>
                     </div>
 
                     <div class="formulario__conjunto" id="grupo__rol">
                         <div class="formulario__conjunto-input">
                             <input  name="rol_id" id="rol_id" class="form-control" type="hidden" placeholder="Usuario" value="2" readonly>
                         </div>
-                        <img class="bien" src="imagenes/check.png">
-                        <img class="mal" src="imagenes/cerrar.png">
+                        <img class="bien" alt="bien" src="imagenes/check.png">
+                        <img class="mal" alt="mal" src="imagenes/cerrar.png">
                         <p class="formulario__input-error">2 para usuario</p>
                     </div>
 
                     <button class="boton_registro" type="submit" name="registro" value="Registrarme">CREAR USUARIO</button>
                     
                 </form>
+                <!--En caso de que el usuario tenga ya una cuenta podrá ser redirigido al login para que inicie sesión-->
                 <div class="tarjeta_login_footer">
                     ¿Tienes ya una cuenta? <a href="login.php">Iniciar Sesión</a>
                 </div>

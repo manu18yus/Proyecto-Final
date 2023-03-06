@@ -10,7 +10,7 @@
 USERDB="root"
 PASSDB="root"
 HOST=$(hostname -I)
-WWW="/var/www/html/Proyecto-Final"
+WWW="/var/www/html/"
 
 # Nombre del fichero de los datos en el proyecto 
 DATOS="db/subastas.sql"
@@ -24,7 +24,7 @@ then
 fi
 
 # Copiamos el contenido de la carpeta proyecto a la página html
-cp -r ../Proyecto-Final/ $WWW
+cp -r ../../Proyecto-Final/ $WWW
 
 # Restauramos los datos de ejemplo a la BBDD
 mysqladmin -u $USERDB -p$USERDB create $BBDD

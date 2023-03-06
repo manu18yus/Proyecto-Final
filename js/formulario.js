@@ -4,7 +4,7 @@ const inputs = document.querySelectorAll('#formulario input');
 
 //Crearemos expresiones regulares para poder validar nuestro formulario
 const expresiones = {
-    correo: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+    correo: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
     user: /^[a-zA-Z0-9\_\-]{4,15}$/,
     pass: /^[a-zA-Z0-9\_\-]{4,15}$/,
     rol_id:/^[2-3]{1}$/
@@ -29,6 +29,10 @@ const validarFormulario = (e) =>{
             break;
         case "pass":
                 validar(expresiones.pass, e.target, 'pass');
+                validarContrasenia2();
+            break;
+        case "pass2":
+                validarContrasenia2();
             break;
         case "rol_id":
                 validar(expresiones.rol_id, e.target, 'rol_id');
@@ -54,6 +58,29 @@ const validar = (expresion, input, campo) => {
         document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
         campos[campo]=false;
     }
+}
+
+//Con esta función lo que haremos será comprobar que la primera contraseña que el usuario introduzca
+//sea la misma que la segunda para que no haya errores
+const validarContrasenia2 = () => {
+	const inputContrasenia1 = document.getElementById('pass');
+	const inputContrasenia2 = document.getElementById('pass2');
+
+	if(inputContrasenia1.value !== inputContrasenia2.value){
+		document.getElementById(`grupo__pass2`).classList.add('formulario__grupo-error');
+		document.getElementById(`grupo__pass2`).classList.remove('formulario__grupo-correcto');
+		document.querySelector(`#grupo__pass2 img.mal`).classList.add('mostrar');
+		document.querySelector(`#grupo__pass2 img.bien`).classList.remove('mostrar');
+		document.querySelector(`#grupo__pass2 .formulario__input-error`).classList.add('formulario__input-error-activo');
+		campos['pass'] = true;
+	} else {
+		document.getElementById(`grupo__pass2`).classList.remove('formulario__grupo-error');
+		document.getElementById(`grupo__pass2`).classList.add('formulario__grupo-correcto');
+		document.querySelector(`#grupo__pass2 img.mal`).classList.remove('mostrar');
+		document.querySelector(`#grupo__pass2 img.bien`).classList.add('mostrar');
+		document.querySelector(`#grupo__pass2 .formulario__input-error`).classList.remove('formulario__input-error-activo');
+		campos['pass'] = false;
+	}
 }
 
 

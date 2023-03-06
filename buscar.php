@@ -7,7 +7,7 @@ include('baseDatos.php');
 
 $search = $_POST['search'];
 if(!empty($search)) {
-  $query = "SELECT * FROM usuario WHERE correo LIKE '$search%'";
+  $query = "SELECT * FROM usuario WHERE user LIKE '$search%'";
   $result = mysqli_query($connection, $query);
   
   if(!$result) {

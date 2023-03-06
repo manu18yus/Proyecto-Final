@@ -34,8 +34,14 @@ function Footer()
 }
 }
 
+//Con esta consulta lo que haremos sera mostrar por pantalla el id, nombre y descripción de la licitación
+//siempre y cuando la licitación este disponible y no haya sido subastada
 require 'cn.php';
-$consulta = "SELECT * FROM producto";
+$consulta = "SELECT p.id_producto, p.nombre, p.descripcion
+FROM producto p
+JOIN subasta s ON p.id_producto = s.id_producto
+WHERE s.estado = 0
+";
 $resultado = $mysqli ->query($consulta);
 
 
@@ -44,6 +50,7 @@ $pdf -> AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Arial','',9);
 
+//Con esto mostramos por pantalla el id, el nombre y la descripción 
 while($row = $resultado->fetch_assoc()){
     $pdf->Cell(20, 20, $row['id_producto'], 1, 0,'C', 0);
     $pdf->Cell(75, 20, utf8_decode($row['nombre']), 1, 0,'C', 0);

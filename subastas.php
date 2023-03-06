@@ -20,12 +20,12 @@
 </head>
 
 <body>
-
+<!--Aqui se muestra el menu de navegación-->
     <div id="wrapper">
           <nav class="navbar navbar-expand-sm navbar-dark ">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="imagenes/logo.png" alt="" width="150">
+                    <img id="logo_inicio" src="imagenes/logo.png" alt="logotipo" width="150">
                 </a>
            
                 <button class="navbar-toggler"
@@ -54,7 +54,7 @@
             ?>
           </nav>
 
-
+  <!--Aqui se encuentrá la información de la pagina -->
         <div id="page-wrapper">
             <div class="container-fluid">
 
@@ -64,7 +64,7 @@
                   <p class="nombre">Manuel Arqués Yus</p>
                 </div>
                 <div class="col-6">
-                  <img class="logo" src="imagenes/logo.png" alt="" width="200">
+                  <img id="logo_medio" class="logo" src="imagenes/logo.png" alt="" width="200">
                 </div>
               </div>
 
@@ -77,21 +77,20 @@
                   </ol>
                 </div>
               </div>
-
+              <!--Aqui se mostrara una zona en la que el usuario podrá ver las licitaciones que están disponibles para imprimir-->
               <div id="impresion" class="row">
                 <div class="col-lg-12">
-                  <ol class="breadcrumb">
-                    <li>
-                      <i class="inicio">LICITACIONES PARA IMPRESIÓN</i> 
-                      <a id="detalles" href="pdf/index.php">
-                        <span  class="ver_detalles">Ver detalles</span>
+                  <ol id="boton_pdf" class="breadcrumb">
+                    <li class="text-center">
+                      <i class="inicio">LICITACIONES PARA IMPRESIÓN</i>
+                      <button id="boton_medio" class="btn mx-auto" onclick="window.location.href='pdf/index.php'">
+                        <span class="ver_detalles">Ver detalles</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                      </a>
+                      </button>
                     </li>
                   </ol>
                 </div>
               </div>
-
 
                 <!-- Listado de licitaciones -->
                 <div class="row">
@@ -128,18 +127,19 @@
 
                                   /*Aqui las licitaciones que tienen una oferta ya*/
                                   ?>
-                                        <div class="col-sm-6 col-md-4">
-                                          <div class="thumbnail">
-                                            <?php echo "<img src='imagenes/productos/$imagen_p' style='height: 220px;'>";?>
-                                            <div class="caption">
-                                              <h3 class="lista_blanca"><?php echo $nombre_p; ?></h3>
-                                              <p class="lista_blanca"><?php print $interval->format('%a días %H horas %I minutos'); ?></p>
-                                              <p class="lista_blanca"><?php echo "$$min.00 - $$max.00"; ?></p>
-                                              <h4 class="lista_blanca">Oferta actual: <b class="text-danger" ><?php echo "$$oferta.00"; ?></b></h4>
-                                              <?php echo "<p><a href='subasta.php?id=$id_subasta' class='btn btn-success btn-block' role='button'>Mejorar oferta</a></p>";?>
-                                            </div>
-                                          </div>
+                                    <div class="col-sm-6 col-md-4"  id="contenedor_tarjeta">
+                                      <div class="card">
+                                        <?php echo "<img src='imagenes/productos/$imagen_p' class='card-img-top' alt='$nombre_p' style='max-height: 25rem;'>";?>
+                                        <div class="card-body">
+                                          <h5 class="card-title"><?php echo $nombre_p; ?></h5>
+                                          <p class="card-text"><?php print $interval->format('%a días %H horas %I minutos'); ?></p>
+                                          <p class="card-text"><?php echo "€$min.00 - €$max.00"; ?></p>
+                                          <h6 class="card-subtitle mb-2 text-danger">Oferta actual: <?php echo "€$oferta.00"; ?></h6>
+                                          <?php echo "<a href='subasta.php?id=$id_subasta' class='btn btn-block' id='boton_medio' role='button'>Mejorar oferta</a>";?>
                                         </div>
+                                      </div>
+                                    </div>
+                                  
                                   <?php
                                   /*Fin de las licitaciones que tienen una oferta */
 
@@ -148,29 +148,28 @@
                               
                                 /*Aqui se mostraran las licitaciones que aun no tienen oferta*/
                                 ?>
-                                      <div class="col-sm-6 col-md-4">
-                                        <div class="thumbnail">
-                                          <?php echo "<img src='imagenes/productos/$imagen_p' style='height: 220px;'>";?>
-                                          <div class="caption">
-                                            <h3 class="lista_blanca"><?php echo $nombre_p; ?></h3>
-                                            <p class="lista_blanca"><?php print $interval->format('%a días %H horas %I minutos'); ?></p>
-                                            <p class="lista_blanca"><?php echo "$$min.00 - $$max.00"; ?></p>
-                                            <h4 class="lista_blanca">Oferta actual: <b class="text-danger"><?php echo "$0.00"; ?></b></h4>
-                                            <?php echo "<p><a href='subasta.php?id=$id_subasta'  id='boton' class='btn btn-block' role='button'>Primero en ofertar</a></p>";?>
-                                          </div>
-                                        </div>
+                                  <div class="col-sm-6 col-md-4" id="contenedor_tarjeta">
+                                    <div class="card">
+                                      <?php echo "<img src='imagenes/productos/$imagen_p' class='card-img-top' alt='$nombre_p' style='max-height: 25rem;'>";?>
+                                      <div class="card-body">
+                                        <h5 class="card-title"><?php echo $nombre_p; ?></h5>
+                                        <p class="card-text"><?php print $interval->format('%a días %H horas %I minutos'); ?></p>
+                                        <p class="card-text"><?php echo "€$min.00 - €$max.00"; ?></p>
+                                        <h6 class="card-subtitle mb-2 text-danger">Oferta actual: <b><?php echo "€0.00"; ?></b></h6>
+                                        <?php echo "<a href='subasta.php?id=$id_subasta' id='boton' class='btn btn-block' role='button'>Primero en ofertar</a>";?>
                                       </div>
+                                    </div>
+                                  </div>
                                 <?php
                                 /*Fin de las licitaciones que no tienen oferta*/
                               }
-
                             }
                           }else{
                             echo "<h4>Hubo un error al recuperar el producto</h4>";
                           }
                         }
                       }else{
-                        echo "<h3>Por el momento no existen subastas</h3>";
+                        echo "<h3 class='lista_blanca'>Por el momento no existen licitaciones</h3>";
                       }
                   ?>
 

@@ -27,7 +27,7 @@
         $user = $_POST["user"];
         $pass = $_POST["pass"];
         $rol_id = $_POST["rol_id"];
-
+        
         $query = "INSERT into usuario(correo, user, pass, rol_id) values('$correo','$user','$pass', '$rol_id');";
 
         $result = $bd->query($query);
@@ -39,7 +39,7 @@
         }
       }
     ?>
-
+<!--Creación de un formulario exclusivo para el administrador donde se le pide el correo, el usuario y la contraseña dos veces-->
 <div class="contenedor">
         <form id="formulario" class="formulario" method="post">
             <div class="tarjeta_login">
@@ -56,8 +56,8 @@
                         <span class="formulario_objeto_icono material-symbols-rounded">email</span>
                             <input name="correo" id="correo" class="form-control" type="text" placeholder="Introduzca un correo" required autofocus>
                         </div>
-                        <img class="bien" src="imagenes/check.png">
-                        <img class="mal" src="imagenes/cerrar.png">
+                        <img class="bien" alt="bien" src="imagenes/check.png">
+                        <img class="mal" alt="mal" src="imagenes/cerrar.png">
                         <p class="formulario__input-error">Introduzca un correo válido</p>
                     </div>
 
@@ -66,8 +66,8 @@
                         <span class="formulario_objeto_icono material-symbols-rounded">person</span>
                             <input name="user" id="user" class="form-control" type="text" placeholder="Introduzca un administrador" required >
                         </div>
-                        <img class="bien" src="imagenes/check.png">
-                        <img class="mal" src="imagenes/cerrar.png">
+                        <img class="bien" alt="bien" src="imagenes/check.png">
+                        <img class="mal" alt="mal" src="imagenes/cerrar.png">
                         <p class="formulario__input-error">Introduzca al menos 4 caracteres</p>
                     </div>
 
@@ -76,17 +76,27 @@
                         <span class="formulario_objeto_icono material-symbols-rounded">lock</span>
                             <input  name="pass" id="pass" class="form-control" type="password" placeholder="Introduzca una contraseña" required>
                         </div>
-                        <img class="bien" src="imagenes/check.png">
-                        <img class="mal" src="imagenes/cerrar.png">
-                        <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+                        <img class="bien" alt="bien" src="imagenes/check.png">
+                        <img class="mal" alt="mal" src="imagenes/cerrar.png">
+                        <p class="formulario__input-error">Contraseña incorrecta</p>
+                    </div>
+
+                    <div class="formulario__conjunto" id="grupo__pass2">
+                        <div class="formulario__conjunto-input">
+                        <span class="formulario_objeto_icono material-symbols-rounded">lock</span>
+                            <input  name="pass2" id="pass2" class="form-control" type="password" placeholder="Repita la contraseña" required>
+                        </div>
+                        <img class="bien" alt="bien" src="imagenes/check.png">
+                        <img class="mal" alt="mal" src="imagenes/cerrar.png">
+                        <p class="formulario__input-error">Las contraseñas deben ser iguales</p>
                     </div>
 
                     <div class="formulario__conjunto" id="grupo__rol">
                         <div class="formulario__conjunto-input">
                             <input  name="rol_id" id="rol_id" class="form-control" type="hidden" placeholder="Usuario" value="1" readonly>
                         </div>
-                        <img class="bien" src="imagenes/check.png">
-                        <img class="mal" src="imagenes/cerrar.png">
+                        <img class="bien" alt="bien" src="imagenes/check.png">
+                        <img class="mal" alt="mal" src="imagenes/cerrar.png">
                         <p class="formulario__input-error">1 para administrador</p>
                     </div>
 
