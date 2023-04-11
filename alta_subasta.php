@@ -239,7 +239,7 @@ if(isset($_POST["agregar"])){
 
                                   <br>
 
-                                  <button name="agregar" type="submit" id="boton_medio" class="btn" >Subastar</button>
+                                  <button name="agregar" type="submit" id="boton_medio" class="btn" >Añadir</button>
                                   <button type="reset" class="btn btn-danger">Cancelar</button>
                           </div>
                         </form>

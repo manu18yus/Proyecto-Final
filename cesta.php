@@ -138,9 +138,9 @@
                                           <td><?php echo "<b class='text-success'>$nombre_p</b>";?></td>
                                           <td><?php echo "<p class='text-info'>$descri_p</p>";?></td>
                                           <td><?php echo $categoria;?></td>
-                                          <td><?php echo "$$min.00";?></td>
-                                          <td><?php echo "$$max.00";?></td>
-                                          <td><?php echo "<b class='text-danger'>$$of_final.00</b>";?></td>
+                                          <td><?php echo "€$min.00";?></td>
+                                          <td><?php echo "€$max.00";?></td>
+                                          <td><?php echo "<b class='text-danger'>€$of_final.00</b>";?></td>
                                       </tr>
                                   <?php
                                 }
@@ -149,7 +149,7 @@
                           }
                         }
                       }else{
-                        echo "<h3>Cesta vacia </h3>";
+                        echo "<h3 class=\"lista_blanca\">Cesta vacia </h3>";
                       }
                       //Termina consulta de subastas
                   ?>

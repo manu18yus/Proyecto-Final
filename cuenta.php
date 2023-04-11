@@ -138,7 +138,7 @@
                                           </td>
                                           <td><?php echo "<b class='text-success'>$nombre_p</b>";?></td>
                                           <td><?php echo $categoria;?></td>
-                                          <td><?php echo "<b class='text-danger'>$$of_final.00</b>";?></td>
+                                          <td><?php echo "<b class='text-danger'>€$of_final.00</b>";?></td>
                                       </tr>
                                   <?php
                                 }
@@ -209,7 +209,7 @@
                                           </td>
                                           <td><?php echo "<b class='text-success'>$nombre_p</b>";?></td>
                                           <td><?php echo $categoria;?></td>
-                                          <td><?php echo "<b class='text-danger'>$$of_final.00</b>";?></td>
+                                          <td><?php echo "<b class='text-danger'>€$of_final.00</b>";?></td>
                                       </tr>
                                   <?php
                                 }
